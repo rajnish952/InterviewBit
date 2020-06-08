@@ -42,3 +42,17 @@ int Solution::solve(int A) {
         }
         return res.size()-1; //excluding number itself
 }
+
+
+// Aliter:
+// Intuition: Suppose you have i stacks then you need to check that N-i stacks can fit in those i stacks or not
+
+int Solution::solve(int A) {
+    int ans = 0;
+    for(int i = 1; i <= A/2; i++){
+        if((A-i) % i == 0){
+            ans++;
+        }
+    }
+    return ans;
+}
